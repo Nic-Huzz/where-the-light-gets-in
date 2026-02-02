@@ -26,13 +26,24 @@ export default function LandingPage() {
         <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full blur-3xl bg-accent/20" />
         <div className="absolute top-40 right-20 w-24 h-24 rounded-full blur-3xl bg-purple/15" />
 
+
         {/* Content */}
         <div className="relative z-10 max-w-2xl mx-auto text-center">
-          {/* Light beam icon */}
-          <div className="mb-8">
-            <div className="inline-block p-4 rounded-full bg-white/10 backdrop-blur-sm">
-              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg shadow-white/30">
-                <span className="text-3xl">✨</span>
+          {/* Glass bubble - inspired by book cover */}
+          <div className="mb-8 w-32 h-32 sm:w-40 sm:h-40 mx-auto animate-float">
+            <div className="relative w-full h-full">
+              {/* Outer glow */}
+              <div className="absolute inset-0 rounded-full bg-white/10 blur-xl" />
+              {/* Main bubble */}
+              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/40 via-white/20 to-transparent backdrop-blur-sm border border-white/30 shadow-lg shadow-white/20">
+                {/* Inner highlight */}
+                <div className="absolute top-3 left-3 w-1/3 h-1/3 rounded-full bg-white/50 blur-sm" />
+                {/* Light refraction effect */}
+                <div className="absolute bottom-4 right-4 w-1/2 h-1/2 rounded-full bg-gradient-to-tr from-purple-light/30 via-transparent to-accent/30 blur-sm" />
+                {/* Center light beam */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-1/4 h-1/4 rounded-full bg-white/60 blur-md" />
+                </div>
               </div>
             </div>
           </div>
@@ -45,8 +56,8 @@ export default function LandingPage() {
 
           {/* Subtitle */}
           <p className="text-xl text-white/80 mb-8 max-w-lg mx-auto leading-relaxed">
-            Your companion for <span className="text-purple-light">simple</span>, <span className="text-[#FFD966] font-medium">playful</span> and{' '}
-            <span className="text-white font-medium">profound</span> perspective shifts to change your life.
+            Your companion for <span className="text-purple-light font-bold">simple</span>, <span className="text-[#FFD966] font-bold">playful</span> and{' '}
+            <span className="text-white font-bold">profound</span> perspective shifts to change your life.
           </p>
 
           {/* Quote */}

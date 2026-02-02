@@ -33,7 +33,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
       },
       backgroundImage: {
         'gradient-light': 'linear-gradient(135deg, rgba(255,255,255,0.3), transparent)',
@@ -46,6 +47,7 @@ const config: Config = {
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
         'fade-in': 'fadeIn 0.5s ease-out',
         'slide-up': 'slideUp 0.5s ease-out',
+        'float': 'float 8s ease-in-out infinite',
       },
       keyframes: {
         breatheIn: {
@@ -70,6 +72,12 @@ const config: Config = {
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0) translateX(0) rotate(0deg)' },
+          '25%': { transform: 'translateY(-10px) translateX(5px) rotate(2deg)' },
+          '50%': { transform: 'translateY(-5px) translateX(-5px) rotate(-1deg)' },
+          '75%': { transform: 'translateY(-15px) translateX(3px) rotate(1deg)' },
         },
       },
     },
