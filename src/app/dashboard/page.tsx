@@ -88,7 +88,7 @@ export default function DashboardPage() {
                 <Card variant="interactive" padding="none" className="h-full overflow-hidden">
                   <div className="bg-[rgba(95,189,214,0.2)] rounded-t-2xl p-4 border-b border-accent/20">
                     <div className="h-20">
-                      <QuickWinDiagram type={qw.id} light />
+                      <QuickWinDiagram type={qw.id}  />
                     </div>
                   </div>
                   <div className="p-4">
@@ -117,7 +117,7 @@ export default function DashboardPage() {
                 <Card variant="interactive" padding="none" className="h-full overflow-hidden">
                   <div className="bg-[rgba(95,189,214,0.2)] rounded-t-2xl p-4 border-b border-accent/20">
                     <div className="h-20">
-                      <DeepWorkDiagram type={ex.id} light />
+                      <DeepWorkDiagram type={ex.id}  />
                     </div>
                   </div>
                   <div className="p-4">
