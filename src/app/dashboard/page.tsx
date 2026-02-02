@@ -54,10 +54,10 @@ export default function DashboardPage() {
             Welcome back
           </h1>
           {painPointInfo && (
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex flex-col items-center gap-2">
               <p className="text-white/70">
                 <span className="mr-2">{painPointInfo.icon}</span>
-                Working on: {painPointInfo.label}
+                Working on: <span className="font-bold text-white">{painPointInfo.label}</span>
               </p>
               <Link
                 href="/onboarding"
