@@ -49,7 +49,7 @@ export default function DeepWorkExercisePage() {
         <Header />
         <PageContainer centered>
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-text mb-4">Exercise not found</h1>
+            <h1 className="text-2xl font-bold text-white mb-4">Exercise not found</h1>
             <Link href="/deep-work">
               <Button>Back to Deep Work</Button>
             </Link>
@@ -152,7 +152,7 @@ export default function DeepWorkExercisePage() {
       default:
         return (
           <div className="text-center py-12">
-            <p className="text-text-light mb-6">
+            <p className="text-white/70 mb-6">
               This exercise is coming soon.
             </p>
             <Link href="/deep-work">
@@ -184,7 +184,7 @@ export default function DeepWorkExercisePage() {
         {/* Back Link */}
         <Link
           href="/deep-work"
-          className="inline-flex items-center gap-2 text-text-light hover:text-text mb-6 transition-colors"
+          className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors"
         >
           ← Back to Deep Work
         </Link>
@@ -192,7 +192,7 @@ export default function DeepWorkExercisePage() {
         {/* Warning if already exists */}
         {existingSnax && step === 0 && (
           <Card variant="warm" padding="md" className="mb-6">
-            <p className="text-sm text-text">
+            <p className="text-sm text-white">
               <span className="font-medium">Note:</span> You've already created this Crowey Snax.
               Completing it again will update your existing one.
             </p>
@@ -239,17 +239,17 @@ function AGameWordsExercise({
     // Step 0: Intro
     <div key="intro" className="text-center py-8">
       <span className="text-5xl mb-6 block">{content.intro.title.includes('A-Game') ? '⭐' : '📝'}</span>
-      <h1 className="text-2xl font-bold text-text mb-4">{content.intro.title}</h1>
-      <p className="text-text-light mb-8 whitespace-pre-line">{content.intro.description}</p>
+      <h1 className="text-2xl font-bold text-white mb-4">{content.intro.title}</h1>
+      <p className="text-white/70 mb-8 whitespace-pre-line">{content.intro.description}</p>
       <Button onClick={() => setStep(1)}>Begin</Button>
     </div>,
 
     // Step 1: Peak Memory
     <div key="step1">
       <ProgressIndicator currentStep={1} totalSteps={4} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[0].title}</h2>
-      <p className="text-text-light mb-4">{content.steps[0].description}</p>
-      <p className="text-sm text-text-light mb-4 italic">{content.steps[0].example}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[0].title}</h2>
+      <p className="text-white/70 mb-4">{content.steps[0].description}</p>
+      <p className="text-sm text-white/70 mb-4 italic">{content.steps[0].example}</p>
       <TextArea
         value={data.memory || ''}
         onChange={(e) => setData({ ...data, memory: e.target.value })}
@@ -265,9 +265,9 @@ function AGameWordsExercise({
     // Step 2: Feelings
     <div key="step2">
       <ProgressIndicator currentStep={2} totalSteps={4} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[1].title}</h2>
-      <p className="text-text-light mb-4">{content.steps[1].description}</p>
-      <p className="text-sm text-text-light mb-4 italic">{content.steps[1].example}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[1].title}</h2>
+      <p className="text-white/70 mb-4">{content.steps[1].description}</p>
+      <p className="text-sm text-white/70 mb-4 italic">{content.steps[1].example}</p>
       <TextArea
         value={data.feelings || ''}
         onChange={(e) => setData({ ...data, feelings: e.target.value })}
@@ -283,24 +283,24 @@ function AGameWordsExercise({
     // Step 3: Choose 5 Words
     <div key="step3">
       <ProgressIndicator currentStep={3} totalSteps={4} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[2].title}</h2>
-      <p className="text-text-light mb-6">{content.steps[2].description}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[2].title}</h2>
+      <p className="text-white/70 mb-6">{content.steps[2].description}</p>
 
       <Card variant="warm" padding="md" className="mb-6">
-        <p className="text-sm text-text-light mb-2">From your reflection:</p>
-        <p className="text-text italic">"{data.feelings}"</p>
+        <p className="text-sm text-white/70 mb-2">From your reflection:</p>
+        <p className="text-white italic">"{data.feelings}"</p>
       </Card>
 
       <div className="space-y-3 mb-6">
         {words.map((word, index) => (
           <div key={index} className="flex items-center gap-3">
-            <span className="text-primary font-bold w-6">{index + 1}.</span>
+            <span className="text-accent font-bold w-6">{index + 1}.</span>
             <input
               type="text"
               value={word}
               onChange={(e) => handleWordChange(index, e.target.value)}
               placeholder={`Word ${index + 1}...`}
-              className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none text-lg"
+              className="flex-1 px-4 py-3 border-2 border-white/30 rounded-xl focus:border-white/60 focus:outline-none text-lg"
             />
           </div>
         ))}
@@ -317,16 +317,16 @@ function AGameWordsExercise({
     // Step 4: Final Review
     <div key="step4">
       <ProgressIndicator currentStep={4} totalSteps={4} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[3].title}</h2>
-      <p className="text-text-light mb-6">{content.steps[3].description}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[3].title}</h2>
+      <p className="text-white/70 mb-6">{content.steps[3].description}</p>
 
       <Card variant="glow" padding="lg" className="mb-8">
-        <h3 className="text-lg font-semibold text-primary mb-4 text-center">Your A-Game Words</h3>
+        <h3 className="text-lg font-semibold text-accent mb-4 text-center">Your A-Game Words</h3>
         <div className="flex flex-wrap justify-center gap-3">
           {words.filter(w => w.trim()).map((word, index) => (
             <span
               key={index}
-              className="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium text-lg"
+              className="px-4 py-2 bg-accent/20 text-accent rounded-full font-medium text-lg"
             >
               {word}
             </span>
@@ -372,16 +372,16 @@ function ToBeListExercise({
     // Intro
     <div key="intro" className="text-center py-8">
       <span className="text-5xl mb-6 block">📝</span>
-      <h1 className="text-2xl font-bold text-text mb-4">{content.intro.title}</h1>
-      <p className="text-text-light mb-8 whitespace-pre-line">{content.intro.description}</p>
+      <h1 className="text-2xl font-bold text-white mb-4">{content.intro.title}</h1>
+      <p className="text-white/70 mb-8 whitespace-pre-line">{content.intro.description}</p>
       <Button onClick={() => setStep(1)}>Begin</Button>
     </div>,
 
     // Step 1
     <div key="step1">
       <ProgressIndicator currentStep={1} totalSteps={3} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[0].title}</h2>
-      <p className="text-text-light mb-4">{content.steps[0].description}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[0].title}</h2>
+      <p className="text-white/70 mb-4">{content.steps[0].description}</p>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {content.steps[0].examples?.map((ex) => (
@@ -393,7 +393,7 @@ function ToBeListExercise({
                 setData({ ...data, qualities: current + (current ? '\n' : '') + ex });
               }
             }}
-            className="px-3 py-1.5 bg-gray-100 hover:bg-primary/10 rounded-full text-sm transition-colors"
+            className="px-3 py-1.5 bg-white/20 hover:bg-accent/20 rounded-full text-sm transition-colors"
           >
             {ex}
           </button>
@@ -415,8 +415,8 @@ function ToBeListExercise({
     // Step 2
     <div key="step2">
       <ProgressIndicator currentStep={2} totalSteps={3} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[1].title}</h2>
-      <p className="text-text-light mb-4">{content.steps[1].description}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[1].title}</h2>
+      <p className="text-white/70 mb-4">{content.steps[1].description}</p>
       <TextArea
         value={data.relationshipQualities || ''}
         onChange={(e) => setData({ ...data, relationshipQualities: e.target.value })}
@@ -432,18 +432,18 @@ function ToBeListExercise({
     // Final
     <div key="final">
       <ProgressIndicator currentStep={3} totalSteps={3} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[2].title}</h2>
-      <p className="text-text-light mb-6">{content.steps[2].celebration}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[2].title}</h2>
+      <p className="text-white/70 mb-6">{content.steps[2].celebration}</p>
 
       <Card variant="glow" padding="lg" className="mb-8">
-        <h3 className="text-lg font-semibold text-primary mb-4 text-center">Your "To Be" List</h3>
+        <h3 className="text-lg font-semibold text-accent mb-4 text-center">Your "To Be" List</h3>
         <ul className="space-y-2">
           {[
             ...(data.qualities || '').split('\n').filter(q => q.trim()),
             ...(data.relationshipQualities || '').split('\n').filter(q => q.trim()),
           ].map((quality, index) => (
             <li key={index} className="flex items-center gap-2">
-              <span className="text-primary">•</span>
+              <span className="text-accent">•</span>
               <span>{quality}</span>
             </li>
           ))}
@@ -487,16 +487,16 @@ function AcceptanceControlExercise({
     // Intro
     <div key="intro" className="text-center py-8">
       <span className="text-5xl mb-6 block">☯️</span>
-      <h1 className="text-2xl font-bold text-text mb-4">{content.intro.title}</h1>
-      <p className="text-text-light mb-8 whitespace-pre-line">{content.intro.description}</p>
+      <h1 className="text-2xl font-bold text-white mb-4">{content.intro.title}</h1>
+      <p className="text-white/70 mb-8 whitespace-pre-line">{content.intro.description}</p>
       <Button onClick={() => setStep(1)}>Begin</Button>
     </div>,
 
     // Situation
     <div key="step1">
       <ProgressIndicator currentStep={1} totalSteps={4} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[0].title}</h2>
-      <p className="text-text-light mb-4">{content.steps[0].description}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[0].title}</h2>
+      <p className="text-white/70 mb-4">{content.steps[0].description}</p>
       <TextArea
         value={data.situation || ''}
         onChange={(e) => setData({ ...data, situation: e.target.value })}
@@ -512,8 +512,8 @@ function AcceptanceControlExercise({
     // Uncontrollables
     <div key="step2">
       <ProgressIndicator currentStep={2} totalSteps={4} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[1].title}</h2>
-      <p className="text-text-light mb-4">{content.steps[1].description}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[1].title}</h2>
+      <p className="text-white/70 mb-4">{content.steps[1].description}</p>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {content.steps[1].examples?.map((ex) => (
@@ -525,7 +525,7 @@ function AcceptanceControlExercise({
                 setData({ ...data, uncontrollables: current + (current ? '\n' : '') + ex });
               }
             }}
-            className="px-3 py-1.5 bg-gray-100 hover:bg-red-50 rounded-full text-sm transition-colors"
+            className="px-3 py-1.5 bg-white/20 hover:bg-red-50 rounded-full text-sm transition-colors"
           >
             {ex}
           </button>
@@ -547,8 +547,8 @@ function AcceptanceControlExercise({
     // Controllables
     <div key="step3">
       <ProgressIndicator currentStep={3} totalSteps={4} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[2].title}</h2>
-      <p className="text-text-light mb-4">{content.steps[2].description}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[2].title}</h2>
+      <p className="text-white/70 mb-4">{content.steps[2].description}</p>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {content.steps[2].examples?.map((ex) => (
@@ -560,7 +560,7 @@ function AcceptanceControlExercise({
                 setData({ ...data, controllables: current + (current ? '\n' : '') + ex });
               }
             }}
-            className="px-3 py-1.5 bg-gray-100 hover:bg-green-50 rounded-full text-sm transition-colors"
+            className="px-3 py-1.5 bg-white/20 hover:bg-green-50 rounded-full text-sm transition-colors"
           >
             {ex}
           </button>
@@ -582,8 +582,8 @@ function AcceptanceControlExercise({
     // Final
     <div key="final">
       <ProgressIndicator currentStep={4} totalSteps={4} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-2">{content.steps[3].title}</h2>
-      <p className="text-text-light mb-6">{content.steps[3].celebration}</p>
+      <h2 className="text-xl font-semibold text-white mb-2">{content.steps[3].title}</h2>
+      <p className="text-white/70 mb-6">{content.steps[3].celebration}</p>
 
       <div className="grid gap-4 sm:grid-cols-2 mb-8">
         <Card padding="md" className="border-2 border-red-100">
@@ -638,8 +638,8 @@ function SuccessListExercise({
     // Intro
     <div key="intro" className="text-center py-8">
       <span className="text-5xl mb-6 block">🎯</span>
-      <h1 className="text-2xl font-bold text-text mb-4">Define Your Success</h1>
-      <p className="text-text-light mb-8">
+      <h1 className="text-2xl font-bold text-white mb-4">Define Your Success</h1>
+      <p className="text-white/70 mb-8">
         Forget society's definition. What does success mean to YOU?
         This exercise helps you create your own measures.
       </p>
@@ -649,10 +649,10 @@ function SuccessListExercise({
     // Questions
     <div key="step1">
       <ProgressIndicator currentStep={1} totalSteps={2} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-4">
+      <h2 className="text-xl font-semibold text-white mb-4">
         "I know I'm being successful when..."
       </h2>
-      <p className="text-text-light mb-4">
+      <p className="text-white/70 mb-4">
         Complete this sentence in as many ways as feel true for you.
         Think about relationships, feelings, actions—not just achievements.
       </p>
@@ -672,13 +672,13 @@ function SuccessListExercise({
     // Final
     <div key="final">
       <ProgressIndicator currentStep={2} totalSteps={2} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-4">Your Success List</h2>
-      <p className="text-text-light mb-6">
+      <h2 className="text-xl font-semibold text-white mb-4">Your Success List</h2>
+      <p className="text-white/70 mb-6">
         These are YOUR measures of success. Review them when you doubt yourself.
       </p>
 
       <Card variant="glow" padding="lg" className="mb-8">
-        <h3 className="text-lg font-semibold text-primary mb-4">I know I'm being successful when...</h3>
+        <h3 className="text-lg font-semibold text-accent mb-4">I know I'm being successful when...</h3>
         <ul className="space-y-2">
           {(data.definitions || '').split('\n').filter(d => d.trim()).map((def, i) => (
             <li key={i} className="flex items-start gap-2">
@@ -723,8 +723,8 @@ function JustAdmitItExercise({
     // Intro
     <div key="intro" className="text-center py-8">
       <span className="text-5xl mb-6 block">🪞</span>
-      <h1 className="text-2xl font-bold text-text mb-4">"Just Admit It" List</h1>
-      <p className="text-text-light mb-8">
+      <h1 className="text-2xl font-bold text-white mb-4">"Just Admit It" List</h1>
+      <p className="text-white/70 mb-8">
         Sometimes we need radical honesty with ourselves.
         Name the truths you've been avoiding. Once externalized, they lose their power.
       </p>
@@ -734,10 +734,10 @@ function JustAdmitItExercise({
     // Truths
     <div key="step1">
       <ProgressIndicator currentStep={1} totalSteps={2} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-4">
+      <h2 className="text-xl font-semibold text-white mb-4">
         Just Admit It...
       </h2>
-      <p className="text-text-light mb-4">
+      <p className="text-white/70 mb-4">
         What are you avoiding? What fears haven't you named? What truths are you dancing around?
         This is just for you. Be radically honest.
       </p>
@@ -757,8 +757,8 @@ function JustAdmitItExercise({
     // Final
     <div key="final">
       <ProgressIndicator currentStep={2} totalSteps={2} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-4">Your Truths</h2>
-      <p className="text-text-light mb-6">
+      <h2 className="text-xl font-semibold text-white mb-4">Your Truths</h2>
+      <p className="text-white/70 mb-6">
         By naming these, you've taken away some of their power. You're human. These are human truths.
       </p>
 
@@ -766,7 +766,7 @@ function JustAdmitItExercise({
         <ul className="space-y-2">
           {(data.truths || '').split('\n').filter(t => t.trim()).map((truth, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="text-primary">•</span>
+              <span className="text-accent">•</span>
               <span>{truth.replace(/^[•\-\*]\s*/, '')}</span>
             </li>
           ))}
@@ -821,8 +821,8 @@ function MantrasExercise({
     // Intro
     <div key="intro" className="text-center py-8">
       <span className="text-5xl mb-6 block">💫</span>
-      <h1 className="text-2xl font-bold text-text mb-4">Create Your Mantras</h1>
-      <p className="text-text-light mb-8">
+      <h1 className="text-2xl font-bold text-white mb-4">Create Your Mantras</h1>
+      <p className="text-white/70 mb-8">
         Personal power phrases for when pressure rises.
         These become your anchors in difficult moments.
       </p>
@@ -832,8 +832,8 @@ function MantrasExercise({
     // Questions
     <div key="step1">
       <ProgressIndicator currentStep={1} totalSteps={2} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-4">When anxiety rises...</h2>
-      <p className="text-text-light mb-4">
+      <h2 className="text-xl font-semibold text-white mb-4">When anxiety rises...</h2>
+      <p className="text-white/70 mb-4">
         Think about situations where you feel anxious or nervous.
         What could you say to yourself to feel grounded and powerful?
       </p>
@@ -846,14 +846,14 @@ function MantrasExercise({
               value={m.situation}
               onChange={(e) => updateMantra(index, 'situation', e.target.value)}
               placeholder="When I feel..."
-              className="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none"
+              className="w-full px-4 py-2 border-2 border-white/30 rounded-lg focus:border-white/60 focus:outline-none"
             />
             <input
               type="text"
               value={m.mantra}
               onChange={(e) => updateMantra(index, 'mantra', e.target.value)}
               placeholder="I tell myself..."
-              className="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none"
+              className="w-full px-4 py-2 border-2 border-white/30 rounded-lg focus:border-white/60 focus:outline-none"
             />
           </div>
         </Card>
@@ -861,7 +861,7 @@ function MantrasExercise({
 
       <button
         onClick={addMantra}
-        className="text-primary hover:text-primary-dark text-sm font-medium mb-6"
+        className="text-accent hover:text-accent-dark text-sm font-medium mb-6"
       >
         + Add another mantra
       </button>
@@ -880,8 +880,8 @@ function MantrasExercise({
     // Final
     <div key="final">
       <ProgressIndicator currentStep={2} totalSteps={2} className="mb-6" />
-      <h2 className="text-xl font-semibold text-text mb-4">Your Mantras</h2>
-      <p className="text-text-light mb-6">
+      <h2 className="text-xl font-semibold text-white mb-4">Your Mantras</h2>
+      <p className="text-white/70 mb-6">
         Use these when pressure rises. Say them out loud or in your head.
       </p>
 
@@ -889,9 +889,9 @@ function MantrasExercise({
         {mantras.filter(m => m.mantra.trim()).map((m, i) => (
           <Card key={i} variant="glow" padding="md">
             {m.situation && (
-              <p className="text-sm text-text-light mb-2">When {m.situation}...</p>
+              <p className="text-sm text-white/70 mb-2">When {m.situation}...</p>
             )}
-            <p className="text-lg font-semibold text-primary">"{m.mantra}"</p>
+            <p className="text-lg font-semibold text-accent">"{m.mantra}"</p>
           </Card>
         ))}
       </div>

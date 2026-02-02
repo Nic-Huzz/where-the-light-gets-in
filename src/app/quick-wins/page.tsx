@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Header, PageContainer } from '@/components/layout';
-import { Card } from '@/components/ui';
+import { Card, QuickWinDiagram } from '@/components/ui';
 import { getUserState } from '@/lib/storage';
 import { getAllQuickWins, getQuickWinsForPainPoint } from '@/lib/content';
 import { QuickWin, PainPoint } from '@/lib/types';
@@ -52,10 +52,10 @@ export default function QuickWinsPage() {
       <PageContainer>
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-text mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
             Quick Wins
           </h1>
-          <p className="text-text-light">
+          <p className="text-white/70">
             Simple tools you can use anytime to shift your state.
           </p>
         </div>
@@ -66,8 +66,8 @@ export default function QuickWinsPage() {
             onClick={() => setShowAll(false)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               !showAll
-                ? 'bg-primary text-white'
-                : 'bg-gray-100 text-text-light hover:bg-gray-200'
+                ? 'bg-white text-primary'
+                : 'bg-white/15 text-white/70 hover:bg-white/20'
             }`}
           >
             For You
@@ -76,8 +76,8 @@ export default function QuickWinsPage() {
             onClick={() => setShowAll(true)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               showAll
-                ? 'bg-primary text-white'
-                : 'bg-gray-100 text-text-light hover:bg-gray-200'
+                ? 'bg-white text-primary'
+                : 'bg-white/15 text-white/70 hover:bg-white/20'
             }`}
           >
             All Tools
@@ -87,23 +87,27 @@ export default function QuickWinsPage() {
         {/* Quick Wins by Category */}
         {Object.entries(groupedWins).map(([category, wins]) => (
           <section key={category} className="mb-8">
-            <h2 className="text-lg font-semibold text-text mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
               <span>{categoryLabels[category]?.icon}</span>
               {categoryLabels[category]?.label || category}
             </h2>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {wins.map((qw) => (
                 <Link key={qw.id} href={`/quick-wins/${qw.id}`}>
-                  <Card variant="interactive" padding="md" className="h-full">
-                    <div className="flex items-start gap-3">
-                      <span className="text-2xl">{qw.icon}</span>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-text mb-1">{qw.name}</h3>
-                        <p className="text-sm text-text-light mb-2">{qw.description}</p>
-                        <span className="inline-block text-xs text-text-light bg-gray-100 px-2 py-1 rounded">
-                          {qw.duration}
-                        </span>
+                  <Card variant="interactive" padding="none" className="h-full overflow-hidden">
+                    {/* Diagram */}
+                    <div className="bg-[rgba(95,189,214,0.2)] p-4 border-b border-accent/20">
+                      <div className="h-24">
+                        <QuickWinDiagram type={qw.id} />
                       </div>
+                    </div>
+                    {/* Content */}
+                    <div className="p-4">
+                      <h3 className="font-semibold text-white mb-1">{qw.name}</h3>
+                      <p className="text-sm text-white/70 line-clamp-2 mb-2">{qw.description}</p>
+                      <span className="inline-block text-xs text-white/80 bg-white/20 px-2 py-1 rounded">
+                        {qw.duration}
+                      </span>
                     </div>
                   </Card>
                 </Link>

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Header, PageContainer } from '@/components/layout';
-import { Card, CroweySnaxBadge } from '@/components/ui';
+import { Card, CroweySnaxBadge, DeepWorkDiagram } from '@/components/ui';
 import { getUserState, getCroweySnax } from '@/lib/storage';
 import { getAllDeepWork, getDeepWorkForPainPoint, CROWEY_SNAX_NAMES } from '@/lib/content';
 import { DeepWorkExercise, PainPoint, CroweySnax } from '@/lib/types';
@@ -43,10 +43,10 @@ export default function DeepWorkPage() {
       <PageContainer>
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-text mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
             Deep Work
           </h1>
-          <p className="text-text-light">
+          <p className="text-white/70">
             Transformational exercises that create your personal Crowey Snax—artifacts you'll use forever.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function DeepWorkPage() {
           <Card variant="warm" padding="md" className="mb-8">
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xl">🍪</span>
-              <span className="font-semibold text-text">Your Crowey Snax</span>
+              <span className="font-semibold text-white">Your Crowey Snax</span>
             </div>
             <div className="flex flex-wrap gap-2">
               {completedSnax.map((snax) => (
@@ -72,8 +72,8 @@ export default function DeepWorkPage() {
             onClick={() => setShowAll(false)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               !showAll
-                ? 'bg-primary text-white'
-                : 'bg-gray-100 text-text-light hover:bg-gray-200'
+                ? 'bg-white text-primary'
+                : 'bg-white/10 text-white/70 hover:bg-white/20'
             }`}
           >
             For You
@@ -82,8 +82,8 @@ export default function DeepWorkPage() {
             onClick={() => setShowAll(true)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               showAll
-                ? 'bg-primary text-white'
-                : 'bg-gray-100 text-text-light hover:bg-gray-200'
+                ? 'bg-white text-primary'
+                : 'bg-white/10 text-white/70 hover:bg-white/20'
             }`}
           >
             All Exercises
@@ -91,34 +91,38 @@ export default function DeepWorkPage() {
         </div>
 
         {/* Exercises Grid */}
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {displayedExercises.map((exercise) => {
             const completed = isCompleted(exercise);
             return (
               <Link key={exercise.id} href={`/deep-work/${exercise.id}`}>
                 <Card
                   variant={completed ? 'glow' : 'interactive'}
-                  padding="md"
-                  className={`h-full ${completed ? 'ring-2 ring-accent' : ''}`}
+                  padding="none"
+                  className={`h-full overflow-hidden ${completed ? 'ring-2 ring-accent' : ''}`}
                 >
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl">{exercise.icon}</span>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-text">{exercise.name}</h3>
-                        {completed && <span className="text-sm">✓</span>}
-                      </div>
-                      <p className="text-sm text-text-light mb-3">
-                        {exercise.description}
-                      </p>
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs text-text-light bg-gray-100 px-2 py-1 rounded">
-                          {exercise.steps} steps
-                        </span>
-                        <span className="text-xs text-text-light">
-                          Creates: <span className="font-medium">{CROWEY_SNAX_NAMES[exercise.produces]}</span>
-                        </span>
-                      </div>
+                  {/* Diagram */}
+                  <div className="bg-[rgba(95,189,214,0.2)] p-4 border-b border-accent/20">
+                    <div className="h-24">
+                      <DeepWorkDiagram type={exercise.id} />
+                    </div>
+                  </div>
+                  {/* Content */}
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-semibold text-white">{exercise.name}</h3>
+                      {completed && <span className="text-accent">✓</span>}
+                    </div>
+                    <p className="text-sm text-white/70 mb-3 line-clamp-2">
+                      {exercise.description}
+                    </p>
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <span className="text-xs text-white/60 bg-white/10 px-2 py-1 rounded">
+                        {exercise.steps} steps
+                      </span>
+                      <span className="text-xs text-accent">
+                        🍪 {CROWEY_SNAX_NAMES[exercise.produces]}
+                      </span>
                     </div>
                   </div>
                 </Card>
@@ -129,7 +133,7 @@ export default function DeepWorkPage() {
 
         {/* Encouragement */}
         <div className="mt-12 text-center">
-          <p className="text-text-light">
+          <p className="text-white/70">
             Each exercise you complete creates a Crowey Snax—a personal artifact that's uniquely yours.
           </p>
         </div>

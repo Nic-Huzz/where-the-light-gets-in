@@ -46,18 +46,19 @@ export function MojoScoreDisplay({
         className={`
           ${styles.circle}
           rounded-full
-          bg-gradient-to-br from-primary/10 to-primary/5
-          border-4 border-primary/20
+          bg-white/15
+          backdrop-blur-md
+          border-4 border-white/30
           flex items-center justify-center
-          shadow-lg shadow-primary/10
+          shadow-lg shadow-black/10
         `}
       >
-        <span className={`${styles.text} font-bold text-primary`}>
+        <span className={`${styles.text} font-bold text-accent`}>
           {average.toFixed(1)}
         </span>
       </div>
 
-      <p className={`mt-2 ${styles.label} text-text-light`}>Mojo Score</p>
+      <p className={`mt-2 ${styles.label} text-white/70`}>Mojo Score</p>
 
       {/* Details */}
       {showDetails && (
@@ -75,8 +76,8 @@ function ScoreItem({ label, value, icon }: { label: string; value: number; icon:
   return (
     <div className="flex flex-col items-center">
       <span className="text-lg mb-1">{icon}</span>
-      <span className="text-xl font-semibold text-text">{value}</span>
-      <span className="text-xs text-text-light">{label}</span>
+      <span className="text-xl font-semibold text-white">{value}</span>
+      <span className="text-xs text-white/70">{label}</span>
     </div>
   );
 }

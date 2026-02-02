@@ -33,7 +33,7 @@ export default function QuickWinToolPage() {
         <Header />
         <PageContainer centered>
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-text mb-4">Tool not found</h1>
+            <h1 className="text-2xl font-bold text-white mb-4">Tool not found</h1>
             <Link href="/quick-wins">
               <Button>Back to Quick Wins</Button>
             </Link>
@@ -68,15 +68,15 @@ export default function QuickWinToolPage() {
         return (
           <div className="max-w-lg mx-auto">
             <Card variant="warm" padding="lg" className="mb-6">
-              <h3 className="text-lg font-semibold text-text mb-4">
+              <h3 className="text-lg font-semibold text-white mb-4">
                 {TWO_WOLVES_CONTENT.title}
               </h3>
-              <div className="text-text-light whitespace-pre-line text-sm leading-relaxed">
+              <div className="text-white/70 whitespace-pre-line text-sm leading-relaxed">
                 {TWO_WOLVES_CONTENT.story}
               </div>
             </Card>
 
-            <h3 className="text-lg font-semibold text-text mb-4 text-center">
+            <h3 className="text-lg font-semibold text-white mb-4 text-center">
               {TWO_WOLVES_CONTENT.question}
             </h3>
 
@@ -88,22 +88,22 @@ export default function QuickWinToolPage() {
                   className={`
                     p-4 rounded-xl border-2 transition-all
                     ${selectedWolf === key
-                      ? 'border-primary bg-primary/10'
-                      : 'border-gray-200 hover:border-gray-300'
+                      ? 'border-accent bg-accent/20'
+                      : 'border-white/30 hover:border-white/50'
                     }
                   `}
                 >
                   <span className="text-2xl mb-2 block">
                     {key === 'good' ? '🐺✨' : key === 'bad' ? '🐺🔥' : '🐺'}
                   </span>
-                  <span className="text-sm font-medium text-text">{label}</span>
+                  <span className="text-sm font-medium text-white">{label}</span>
                 </button>
               ))}
             </div>
 
             {selectedWolf && (
               <div className="animate-fade-in">
-                <p className="text-text-light mb-4">
+                <p className="text-white/70 mb-4">
                   {selectedWolf === 'good'
                     ? "Great awareness. Keep feeding that wolf with positive thoughts and actions."
                     : selectedWolf === 'bad'
@@ -122,24 +122,24 @@ export default function QuickWinToolPage() {
         return (
           <div className="max-w-lg mx-auto">
             <Card variant="glow" padding="lg" className="mb-6">
-              <h3 className="text-lg font-semibold text-text mb-4">
+              <h3 className="text-lg font-semibold text-white mb-4">
                 The Power of "Get To"
               </h3>
-              <p className="text-text-light mb-4">
+              <p className="text-white/70 mb-4">
                 Notice how "I've <strong>got to</strong> go to work" feels heavy and obligatory.
               </p>
-              <p className="text-text-light mb-4">
+              <p className="text-white/70 mb-4">
                 Now try: "I <strong>get to</strong> go to work."
               </p>
-              <p className="text-text-light">
+              <p className="text-white/70">
                 Same words, different energy. One feels like a burden, the other like a privilege.
               </p>
             </Card>
 
-            <h3 className="text-lg font-semibold text-text mb-4">
+            <h3 className="text-lg font-semibold text-white mb-4">
               Your Turn
             </h3>
-            <p className="text-text-light mb-4">
+            <p className="text-white/70 mb-4">
               What's something you've been saying you've "got to" do?
             </p>
 
@@ -154,14 +154,14 @@ export default function QuickWinToolPage() {
             {reflection && (
               <div className="animate-fade-in">
                 <Card variant="warm" padding="md" className="mb-6">
-                  <p className="text-text font-medium">
+                  <p className="text-white font-medium">
                     Reframe: "I <span className="text-primary">get to</span>{' '}
                     {reflection.replace(/^I('ve)?\s*(got|have)\s*to\s*/i, '').trim() || '...'}
                     "
                   </p>
                 </Card>
 
-                <p className="text-text-light text-sm mb-4">
+                <p className="text-white/70 text-sm mb-4">
                   Feel the difference? Keep noticing your language today.
                 </p>
 
@@ -178,21 +178,21 @@ export default function QuickWinToolPage() {
           <div className="max-w-lg mx-auto text-center">
             <div className="py-12">
               <div className="text-6xl mb-8">💪</div>
-              <h2 className="text-3xl font-bold text-text mb-6">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 I Am Enough
               </h2>
-              <p className="text-xl text-text-light mb-8">
+              <p className="text-xl text-white/70 mb-8">
                 Say it out loud. Mean it.
               </p>
 
               <Card variant="glow" padding="lg" className="mb-8">
-                <p className="text-lg text-text leading-relaxed">
+                <p className="text-lg text-white leading-relaxed">
                   You don't have to earn your worth. You don't have to prove anything to anyone.
                   Right here, right now, as you are—<strong className="text-primary">you are enough</strong>.
                 </p>
               </Card>
 
-              <p className="text-text-light mb-6">
+              <p className="text-white/70 mb-6">
                 Take a deep breath. Place your hand on your heart if it helps.
               </p>
 
@@ -210,10 +210,10 @@ export default function QuickWinToolPage() {
         return (
           <div className="max-w-lg mx-auto text-center">
             <div className="text-5xl mb-6">🎮</div>
-            <h3 className="text-xl font-semibold text-text mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               5 Minutes of Pure Play
             </h3>
-            <p className="text-text-light mb-8">
+            <p className="text-white/70 mb-8">
               Set a timer for 5 minutes and do something purely for fun.
               No productivity, no purpose—just play.
             </p>
@@ -222,17 +222,17 @@ export default function QuickWinToolPage() {
               <Card padding="md" className="text-left">
                 <span className="text-lg mr-3">🔍</span>
                 <span className="font-medium">Curiosity Play:</span>{' '}
-                <span className="text-text-light">Google something weird you've always wondered about</span>
+                <span className="text-white/70">Google something weird you've always wondered about</span>
               </Card>
               <Card padding="md" className="text-left">
                 <span className="text-lg mr-3">🎲</span>
                 <span className="font-medium">Spontaneity Play:</span>{' '}
-                <span className="text-text-light">Do something random—dance, doodle, make a funny face</span>
+                <span className="text-white/70">Do something random—dance, doodle, make a funny face</span>
               </Card>
               <Card padding="md" className="text-left">
                 <span className="text-lg mr-3">🤪</span>
                 <span className="font-medium">Nonsense Play:</span>{' '}
-                <span className="text-text-light">Do something absurd that makes you laugh</span>
+                <span className="text-white/70">Do something absurd that makes you laugh</span>
               </Card>
             </div>
 
@@ -246,23 +246,23 @@ export default function QuickWinToolPage() {
         return (
           <div className="max-w-lg mx-auto text-center py-12">
             <div className="text-5xl mb-8">🌅</div>
-            <h2 className="text-3xl font-bold text-text mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               This Too Shall Pass
             </h2>
 
             <Card variant="warm" padding="lg" className="mb-8">
-              <p className="text-lg text-text leading-relaxed mb-4">
+              <p className="text-lg text-white leading-relaxed mb-4">
                 Whatever you're feeling right now—the pressure, the anxiety, the uncertainty—
                 it's temporary. Like clouds passing across the sky.
               </p>
-              <p className="text-text-light">
+              <p className="text-white/70">
                 This moment will change. You will get through this.
               </p>
             </Card>
 
-            <p className="text-text-light mb-6">
+            <p className="text-white/70 mb-6">
               Take three deep breaths and repeat:<br />
-              <strong className="text-text">"This too shall pass."</strong>
+              <strong className="text-white">"This too shall pass."</strong>
             </p>
 
             <Button onClick={() => setIsComplete(true)} size="lg">
@@ -275,10 +275,10 @@ export default function QuickWinToolPage() {
         return (
           <div className="max-w-lg mx-auto text-center py-12">
             <div className="text-5xl mb-8">🎵</div>
-            <h2 className="text-2xl font-bold text-text mb-4">
+            <h2 className="text-2xl font-bold text-white mb-4">
               Humming Technique
             </h2>
-            <p className="text-text-light mb-8">
+            <p className="text-white/70 mb-8">
               Humming activates your vagus nerve, calms your nervous system,
               and creates a playful inner tone.
             </p>
@@ -314,20 +314,20 @@ export default function QuickWinToolPage() {
         return (
           <div className="max-w-lg mx-auto text-center py-12">
             <div className="text-5xl mb-8">😄</div>
-            <h2 className="text-2xl font-bold text-text mb-4">
+            <h2 className="text-2xl font-bold text-white mb-4">
               Rule Number 6
             </h2>
 
             <Card variant="warm" padding="lg" className="mb-8">
-              <blockquote className="text-xl font-semibold text-text mb-4">
+              <blockquote className="text-xl font-semibold text-white mb-4">
                 "Don't take yourself so goddamn seriously."
               </blockquote>
-              <p className="text-text-light">
+              <p className="text-white/70">
                 That's Rule Number 6. There are no other rules.
               </p>
             </Card>
 
-            <p className="text-text-light mb-6">
+            <p className="text-white/70 mb-6">
               Whatever's weighing on you right now—can you find a way to hold it more lightly?
               To laugh at yourself, just a little?
             </p>
@@ -341,7 +341,7 @@ export default function QuickWinToolPage() {
       default:
         return (
           <div className="text-center py-12">
-            <p className="text-text-light mb-6">
+            <p className="text-white/70 mb-6">
               This tool is coming soon.
             </p>
             <Link href="/quick-wins">
@@ -362,10 +362,10 @@ export default function QuickWinToolPage() {
             <div className="mb-6">
               <SuccessCheckmark size={100} />
             </div>
-            <h2 className="text-2xl font-bold text-text mb-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <h2 className="text-2xl font-bold text-white mb-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               Well done!
             </h2>
-            <p className="text-text-light mb-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <p className="text-white/70 mb-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
               You just took a moment for yourself. That matters.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.7s' }}>
@@ -389,7 +389,7 @@ export default function QuickWinToolPage() {
         {/* Back Link */}
         <Link
           href="/quick-wins"
-          className="inline-flex items-center gap-2 text-text-light hover:text-text mb-6 transition-colors"
+          className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors"
         >
           ← Back to Quick Wins
         </Link>
@@ -397,8 +397,8 @@ export default function QuickWinToolPage() {
         {/* Tool Header */}
         <div className="text-center mb-8">
           <span className="text-4xl mb-4 block">{tool.icon}</span>
-          <h1 className="text-2xl font-bold text-text mb-2">{tool.name}</h1>
-          <p className="text-text-light">{tool.description}</p>
+          <h1 className="text-2xl font-bold text-white mb-2">{tool.name}</h1>
+          <p className="text-white/70">{tool.description}</p>
         </div>
 
         {/* Tool Content */}
@@ -432,10 +432,10 @@ function ThreeWinsExercise({ onComplete }: { onComplete: () => void }) {
   if (step === 'today') {
     return (
       <div className="max-w-lg mx-auto">
-        <h3 className="text-xl font-semibold text-text mb-2">
+        <h3 className="text-xl font-semibold text-white mb-2">
           Today's Three Wins
         </h3>
-        <p className="text-text-light mb-6">
+        <p className="text-white/70 mb-6">
           What are three wins from today? They can be small—getting out of bed counts.
         </p>
 
@@ -448,7 +448,7 @@ function ThreeWinsExercise({ onComplete }: { onComplete: () => void }) {
                 value={win}
                 onChange={(e) => handleTodayWinChange(index, e.target.value)}
                 placeholder={`Win ${index + 1}...`}
-                className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none"
+                className="flex-1 px-4 py-3 border-2 border-white/30 rounded-xl focus:border-primary focus:outline-none"
               />
             </div>
           ))}
@@ -463,10 +463,10 @@ function ThreeWinsExercise({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div className="max-w-lg mx-auto animate-fade-in">
-      <h3 className="text-xl font-semibold text-text mb-2">
+      <h3 className="text-xl font-semibold text-white mb-2">
         Tomorrow's Three Wins
       </h3>
-      <p className="text-text-light mb-6">
+      <p className="text-white/70 mb-6">
         What are three wins you want to create tomorrow?
       </p>
 
@@ -479,7 +479,7 @@ function ThreeWinsExercise({ onComplete }: { onComplete: () => void }) {
               value={win}
               onChange={(e) => handleTomorrowWinChange(index, e.target.value)}
               placeholder={`Win ${index + 1}...`}
-              className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none"
+              className="flex-1 px-4 py-3 border-2 border-white/30 rounded-xl focus:border-primary focus:outline-none"
             />
           </div>
         ))}

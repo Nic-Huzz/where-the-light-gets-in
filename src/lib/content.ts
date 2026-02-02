@@ -4,7 +4,7 @@ import { PainPoint, PainPointInfo, QuickWin, DeepWorkExercise, CroweySnaxType } 
 export const PAIN_POINTS: PainPointInfo[] = [
   {
     id: 'pressure',
-    label: "I choke under pressure",
+    label: "I struggle under pressure",
     description: "High-stakes moments feel overwhelming. Your performance suffers when it matters most.",
     icon: "🎯",
   },

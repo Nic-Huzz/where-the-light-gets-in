@@ -23,9 +23,9 @@ export function ProgressIndicator({
             key={index}
             className={`
               h-2 rounded-full transition-all duration-300
-              ${isCurrent ? 'w-8 bg-primary' : 'w-2'}
-              ${isCompleted ? 'bg-primary' : ''}
-              ${!isCompleted && !isCurrent ? 'bg-gray-200' : ''}
+              ${isCurrent ? 'w-8 bg-white' : 'w-2'}
+              ${isCompleted ? 'bg-white' : ''}
+              ${!isCompleted && !isCurrent ? 'bg-white/30' : ''}
             `}
           />
         );

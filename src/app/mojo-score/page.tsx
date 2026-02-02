@@ -79,10 +79,10 @@ export default function MojoScorePage() {
         <PageContainer>
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-text mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               Mojo Score
             </h1>
-            <p className="text-text-light">
+            <p className="text-white/70">
               Track your Play, Purpose, and Potential over time. No judgment, just awareness.
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function MojoScorePage() {
               <div className="flex flex-col sm:flex-row items-center gap-6">
                 <MojoScoreDisplay score={scores[0]} showDetails size="md" />
                 <div className="flex-1 text-center sm:text-left">
-                  <p className="text-sm text-text-light mb-2">
+                  <p className="text-sm text-white/70 mb-2">
                     Last check-in: {new Date(scores[0].date).toLocaleDateString()}
                   </p>
                   <Button onClick={handleStartCheckin}>
@@ -105,10 +105,10 @@ export default function MojoScorePage() {
           ) : (
             <Card variant="warm" padding="lg" className="mb-8 text-center">
               <span className="text-4xl mb-4 block">📊</span>
-              <h2 className="text-xl font-semibold text-text mb-2">
+              <h2 className="text-xl font-semibold text-white mb-2">
                 No check-ins yet
               </h2>
-              <p className="text-text-light mb-6 max-w-md mx-auto">
+              <p className="text-white/70 mb-6 max-w-md mx-auto">
                 The Mojo Score helps you track your intrinsic motivation—Play, Purpose, and Potential.
                 It takes less than 2 minutes.
               </p>
@@ -121,7 +121,7 @@ export default function MojoScorePage() {
           {/* History */}
           {scores.length > 1 && (
             <section>
-              <h2 className="text-lg font-semibold text-text mb-4">History</h2>
+              <h2 className="text-lg font-semibold text-white mb-4">History</h2>
 
               {/* Simple Trend Visualization */}
               <Card padding="md" className="mb-6">
@@ -139,7 +139,7 @@ export default function MojoScorePage() {
                           style={{ height: `${height}%` }}
                           title={`${avg.toFixed(1)} - ${new Date(score.date).toLocaleDateString()}`}
                         />
-                        <span className="text-[10px] text-text-light">
+                        <span className="text-[10px] text-white/70">
                           {new Date(score.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                         </span>
                       </div>
@@ -154,10 +154,10 @@ export default function MojoScorePage() {
                   <Card key={score.id} padding="sm" className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div className="text-center">
-                        <div className="text-xl font-bold text-primary">
+                        <div className="text-xl font-bold text-accent">
                           {calculateMojoAverage(score).toFixed(1)}
                         </div>
-                        <div className="text-xs text-text-light">Mojo</div>
+                        <div className="text-xs text-white/70">Mojo</div>
                       </div>
                       <div className="flex gap-4 text-sm">
                         <span>🎮 {score.play}</span>
@@ -165,7 +165,7 @@ export default function MojoScorePage() {
                         <span>🌱 {score.potential}</span>
                       </div>
                     </div>
-                    <span className="text-sm text-text-light">
+                    <span className="text-sm text-white/70">
                       {new Date(score.date).toLocaleDateString()}
                     </span>
                   </Card>
@@ -176,7 +176,7 @@ export default function MojoScorePage() {
 
           {/* Info */}
           <div className="mt-12 text-center">
-            <p className="text-sm text-text-light max-w-md mx-auto">
+            <p className="text-sm text-white/70 max-w-md mx-auto">
               The goal isn't to "max out"—it's awareness. A dip isn't failure; it's information.
               Scores naturally fluctuate. That's human.
             </p>
@@ -193,8 +193,8 @@ export default function MojoScorePage() {
       <div key="play" className="animate-fade-in">
         <div className="text-center mb-8">
           <span className="text-4xl mb-4 block">🎮</span>
-          <h2 className="text-xl font-semibold text-text mb-2">Play</h2>
-          <p className="text-text-light">{MOJO_QUESTIONS.play.question}</p>
+          <h2 className="text-xl font-semibold text-white mb-2">Play</h2>
+          <p className="text-white/70">{MOJO_QUESTIONS.play.question}</p>
         </div>
         <Slider
           value={play}
@@ -215,8 +215,8 @@ export default function MojoScorePage() {
       <div key="purpose" className="animate-fade-in">
         <div className="text-center mb-8">
           <span className="text-4xl mb-4 block">🧭</span>
-          <h2 className="text-xl font-semibold text-text mb-2">Purpose</h2>
-          <p className="text-text-light">{MOJO_QUESTIONS.purpose.question}</p>
+          <h2 className="text-xl font-semibold text-white mb-2">Purpose</h2>
+          <p className="text-white/70">{MOJO_QUESTIONS.purpose.question}</p>
         </div>
         <Slider
           value={purpose}
@@ -237,8 +237,8 @@ export default function MojoScorePage() {
       <div key="potential" className="animate-fade-in">
         <div className="text-center mb-8">
           <span className="text-4xl mb-4 block">🌱</span>
-          <h2 className="text-xl font-semibold text-text mb-2">Potential</h2>
-          <p className="text-text-light">{MOJO_QUESTIONS.potential.question}</p>
+          <h2 className="text-xl font-semibold text-white mb-2">Potential</h2>
+          <p className="text-white/70">{MOJO_QUESTIONS.potential.question}</p>
         </div>
         <Slider
           value={potential}
@@ -258,14 +258,14 @@ export default function MojoScorePage() {
       // Review & Optional
       <div key="review" className="animate-fade-in">
         <div className="text-center mb-6">
-          <h2 className="text-xl font-semibold text-text mb-2">Your Mojo Score</h2>
-          <p className="text-text-light">Here's how you're doing this week.</p>
+          <h2 className="text-xl font-semibold text-white mb-2">Your Mojo Score</h2>
+          <p className="text-white/70">Here's how you're doing this week.</p>
         </div>
 
         {/* Score Preview */}
         <Card variant="glow" padding="lg" className="mb-6">
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">
+            <div className="text-4xl font-bold text-accent mb-2">
               {((play + purpose + potential) / 3).toFixed(1)}
             </div>
             <div className="flex justify-center gap-6 text-sm">
@@ -280,7 +280,7 @@ export default function MojoScorePage() {
         <div className="mb-6">
           <button
             onClick={() => setShowAdvanced(!showAdvanced)}
-            className="text-sm text-primary hover:text-primary-dark"
+            className="text-sm text-accent hover:text-accent-dark"
           >
             {showAdvanced ? '− Hide' : '+'} Warning signals (optional)
           </button>
@@ -288,7 +288,7 @@ export default function MojoScorePage() {
           {showAdvanced && (
             <div className="mt-4 space-y-6 animate-fade-in">
               <div>
-                <p className="text-sm text-text-light mb-2">{MOJO_QUESTIONS.pressure.question}</p>
+                <p className="text-sm text-white/70 mb-2">{MOJO_QUESTIONS.pressure.question}</p>
                 <Slider
                   value={pressure || 3}
                   onChange={(v) => setPressure(v)}
@@ -299,7 +299,7 @@ export default function MojoScorePage() {
                 />
               </div>
               <div>
-                <p className="text-sm text-text-light mb-2">{MOJO_QUESTIONS.inertia.question}</p>
+                <p className="text-sm text-white/70 mb-2">{MOJO_QUESTIONS.inertia.question}</p>
                 <Slider
                   value={inertia || 3}
                   onChange={(v) => setInertia(v)}
@@ -340,7 +340,7 @@ export default function MojoScorePage() {
               <div
                 key={s}
                 className={`h-1 flex-1 rounded-full transition-colors ${
-                  s <= step ? 'bg-primary' : 'bg-gray-200'
+                  s <= step ? 'bg-primary' : 'bg-white/30'
                 }`}
               />
             ))}
@@ -362,18 +362,18 @@ export default function MojoScorePage() {
         <PageContainer centered>
           <div className="text-center animate-fade-in">
             <span className="text-6xl mb-6 block">✨</span>
-            <h1 className="text-2xl font-bold text-text mb-4">
+            <h1 className="text-2xl font-bold text-white mb-4">
               Check-in Complete
             </h1>
 
             <Card variant="glow" padding="lg" className="mb-8 inline-block">
-              <div className="text-5xl font-bold text-primary mb-2">
+              <div className="text-5xl font-bold text-accent mb-2">
                 {avg.toFixed(1)}
               </div>
-              <div className="text-sm text-text-light">Your Mojo Score</div>
+              <div className="text-sm text-white/70">Your Mojo Score</div>
             </Card>
 
-            <p className="text-text-light mb-8 max-w-md mx-auto">
+            <p className="text-white/70 mb-8 max-w-md mx-auto">
               {avg >= 4
                 ? "You're in a great place. Keep feeding what's working."
                 : avg >= 3

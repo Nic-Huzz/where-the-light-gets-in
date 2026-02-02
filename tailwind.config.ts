@@ -12,18 +12,24 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "#5FBDD6",
-          dark: "#4BA8C2",
-          light: "#8DD3E8",
+          DEFAULT: "#4EACE8",
+          dark: "#3D9AD6",
+          light: "#6BBFEF",
         },
         accent: {
           DEFAULT: "#F7D154",
           dark: "#E5B93D",
         },
+        purple: {
+          DEFAULT: "#A78BC3",
+          dark: "#8F73AB",
+          light: "#BFA3D5",
+        },
         cream: "#FFF9E6",
         text: {
-          DEFAULT: "#2D3748",
-          light: "#718096",
+          DEFAULT: "#FFFFFF",
+          light: "rgba(255, 255, 255, 0.8)",
+          dark: "#2D3748",
         },
       },
       fontFamily: {

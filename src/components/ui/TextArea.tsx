@@ -13,7 +13,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium text-text mb-2">
+          <label className="block text-sm font-medium text-white mb-2">
             {label}
           </label>
         )}
@@ -22,12 +22,13 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           ref={ref}
           className={`
             w-full px-4 py-3
-            text-text placeholder:text-text-light
-            bg-white
-            border-2 border-gray-200
+            text-white placeholder:text-white/50
+            bg-white/15
+            backdrop-blur-md
+            border-2 border-white/30
             rounded-xl
             transition-all duration-200
-            focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20
+            focus:outline-none focus:border-white/60 focus:ring-2 focus:ring-white/20
             resize-none
             ${error ? 'border-red-400 focus:border-red-400 focus:ring-red-400/20' : ''}
             ${className}
@@ -36,11 +37,11 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         />
 
         {hint && !error && (
-          <p className="mt-2 text-sm text-text-light">{hint}</p>
+          <p className="mt-2 text-sm text-white/60">{hint}</p>
         )}
 
         {error && (
-          <p className="mt-2 text-sm text-red-500">{error}</p>
+          <p className="mt-2 text-sm text-red-300">{error}</p>
         )}
       </div>
     );

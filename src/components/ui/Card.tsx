@@ -12,9 +12,10 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 
 const variantStyles: Record<CardVariant, string> = {
   default: `
-    bg-white
-    border border-gray-100
-    shadow-sm
+    bg-white/15
+    backdrop-blur-md
+    border border-white/25
+    shadow-lg shadow-black/5
   `,
   glow: `
     card-glow
@@ -23,10 +24,11 @@ const variantStyles: Record<CardVariant, string> = {
     card-warm
   `,
   interactive: `
-    bg-white
-    border-2 border-gray-200
-    shadow-sm
-    hover:border-primary/40 hover:shadow-md
+    bg-white/15
+    backdrop-blur-md
+    border-2 border-white/25
+    shadow-lg shadow-black/5
+    hover:border-white/40 hover:bg-white/20
     cursor-pointer
     transition-all duration-200
   `,
@@ -50,7 +52,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
   }, ref) => {
     // Selected state overrides border styling
     const selectedStyles = selected
-      ? '!border-primary !border-2 shadow-lg shadow-primary/20 bg-primary/5 ring-2 ring-primary/20'
+      ? '!border-accent !border-2 shadow-lg shadow-accent/30 bg-accent/10 ring-2 ring-accent/30'
       : '';
 
     return (

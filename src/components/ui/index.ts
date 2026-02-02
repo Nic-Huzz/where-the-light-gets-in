@@ -8,3 +8,5 @@ export { MojoScoreDisplay } from './MojoScoreDisplay';
 export { BreathingAnimation } from './BreathingAnimation';
 export { Confetti } from './Confetti';
 export { SuccessCheckmark } from './SuccessCheckmark';
+export { QuickWinDiagram } from './QuickWinDiagram';
+export { DeepWorkDiagram } from './DeepWorkDiagram';

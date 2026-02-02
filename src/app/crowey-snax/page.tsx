@@ -34,7 +34,7 @@ export default function CroweySnaxPage() {
               {content.words.map((word, i) => (
                 <span
                   key={i}
-                  className="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium text-lg"
+                  className="px-4 py-2 bg-accent/20 text-accent rounded-full font-medium text-lg"
                 >
                   {word}
                 </span>
@@ -42,8 +42,8 @@ export default function CroweySnaxPage() {
             </div>
             {content.peakMemory && (
               <div className="text-left">
-                <h4 className="font-medium text-text mb-2">Peak Memory:</h4>
-                <p className="text-text-light text-sm italic">"{content.peakMemory}"</p>
+                <h4 className="font-medium text-white mb-2">Peak Memory:</h4>
+                <p className="text-white/70 text-sm italic">"{content.peakMemory}"</p>
               </div>
             )}
           </div>
@@ -56,7 +56,7 @@ export default function CroweySnaxPage() {
           <ul className="space-y-2">
             {content.qualities.map((q, i) => (
               <li key={i} className="flex items-center gap-2">
-                <span className="text-primary">•</span>
+                <span className="text-accent">•</span>
                 <span>{q}</span>
               </li>
             ))}
@@ -102,7 +102,7 @@ export default function CroweySnaxPage() {
         const content = snax.content as SuccessListContent;
         return (
           <div>
-            <h4 className="font-medium text-text mb-3">I know I'm being successful when...</h4>
+            <h4 className="font-medium text-white mb-3">I know I'm being successful when...</h4>
             <ul className="space-y-2">
               {content.definitions.map((def, i) => (
                 <li key={i} className="flex items-start gap-2">
@@ -122,9 +122,9 @@ export default function CroweySnaxPage() {
             {content.mantras.map((m, i) => (
               <div key={i}>
                 {m.situation && (
-                  <p className="text-sm text-text-light mb-1">When {m.situation}...</p>
+                  <p className="text-sm text-white/70 mb-1">When {m.situation}...</p>
                 )}
-                <p className="text-lg font-semibold text-primary">"{m.mantra}"</p>
+                <p className="text-lg font-semibold text-accent">"{m.mantra}"</p>
               </div>
             ))}
           </div>
@@ -137,7 +137,7 @@ export default function CroweySnaxPage() {
           <ul className="space-y-2">
             {content.truths.map((truth, i) => (
               <li key={i} className="flex items-start gap-2">
-                <span className="text-primary">•</span>
+                <span className="text-accent">•</span>
                 <span>{truth}</span>
               </li>
             ))}
@@ -147,7 +147,7 @@ export default function CroweySnaxPage() {
 
       default:
         return (
-          <p className="text-text-light">
+          <p className="text-white/70">
             Content preview not available.
           </p>
         );
@@ -161,10 +161,10 @@ export default function CroweySnaxPage() {
         <PageContainer centered>
           <div className="text-center">
             <span className="text-6xl mb-6 block">🍪</span>
-            <h1 className="text-2xl font-bold text-text mb-4">
+            <h1 className="text-2xl font-bold text-white mb-4">
               Your Crowey Snax Collection
             </h1>
-            <p className="text-text-light mb-8 max-w-md mx-auto">
+            <p className="text-white/70 mb-8 max-w-md mx-auto">
               You haven't created any Crowey Snax yet.
               Complete Deep Work exercises to create personal artifacts you can use forever.
             </p>
@@ -185,11 +185,11 @@ export default function CroweySnaxPage() {
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <span className="text-3xl">🍪</span>
-            <h1 className="text-2xl sm:text-3xl font-bold text-text">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">
               Your Crowey Snax
             </h1>
           </div>
-          <p className="text-text-light">
+          <p className="text-white/70">
             Personal artifacts created from your Deep Work. Use them whenever you need them.
           </p>
         </div>
@@ -209,15 +209,15 @@ export default function CroweySnaxPage() {
                   <span>🍪</span>
                   <span>{CROWEY_SNAX_NAMES[s.type]}</span>
                 </div>
-                <span className="text-xs text-text-light">
+                <span className="text-xs text-white/70">
                   {new Date(s.createdAt).toLocaleDateString()}
                 </span>
               </div>
 
               {/* Preview */}
-              <div className="text-sm text-text-light line-clamp-3">
+              <div className="text-sm text-white/70 line-clamp-3">
                 {s.type === 'a-game-words' && (
-                  <span className="text-primary font-medium">
+                  <span className="text-accent font-medium">
                     {(s.content as AGameWordsContent).words.join(' • ')}
                   </span>
                 )}
@@ -258,7 +258,7 @@ export default function CroweySnaxPage() {
                 </div>
                 <button
                   onClick={() => setSelectedSnax(null)}
-                  className="text-text-light hover:text-text"
+                  className="text-white/70 hover:text-white"
                 >
                   ✕
                 </button>
@@ -266,8 +266,8 @@ export default function CroweySnaxPage() {
 
               {renderSnaxContent(selectedSnax)}
 
-              <div className="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
-                <span className="text-xs text-text-light">
+              <div className="mt-6 pt-4 border-t border-white/20 flex justify-between items-center">
+                <span className="text-xs text-white/70">
                   Created {new Date(selectedSnax.createdAt).toLocaleDateString()}
                 </span>
                 <Link href={`/deep-work/${DEEP_WORK_EXERCISES.find(e => e.produces === selectedSnax.type)?.id}`}>

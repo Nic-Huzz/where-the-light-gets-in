@@ -10,64 +10,95 @@ interface HeaderProps {
 export function Header({ showNav = true }: HeaderProps) {
   const pathname = usePathname();
 
-  return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
-      <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/dashboard" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
-            <span className="text-white text-sm">✨</span>
-          </div>
-          <span className="font-semibold text-text hidden sm:inline">
-            Where the Light Gets In
-          </span>
-        </Link>
+  if (!showNav) return null;
 
-        {/* Navigation */}
-        {showNav && (
-          <nav className="flex items-center gap-1 sm:gap-2">
-            <NavLink href="/dashboard" active={pathname === '/dashboard'}>
-              Home
-            </NavLink>
-            <NavLink href="/quick-wins" active={pathname?.startsWith('/quick-wins')}>
-              Quick Wins
-            </NavLink>
-            <NavLink href="/deep-work" active={pathname?.startsWith('/deep-work')}>
-              Deep Work
-            </NavLink>
-            <NavLink href="/crowey-snax" active={pathname === '/crowey-snax'}>
-              🍪
-            </NavLink>
-          </nav>
-        )}
+  return (
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 safe-area-bottom">
+      <div className="max-w-lg mx-auto px-2 h-16 flex items-center justify-around">
+        <NavLink
+          href="/dashboard"
+          active={pathname === '/dashboard'}
+          icon={<HomeIcon />}
+          label="Home"
+        />
+        <NavLink
+          href="/quick-wins"
+          active={pathname?.startsWith('/quick-wins') ?? false}
+          icon={<QuickWinsIcon />}
+          label="Quick Wins"
+        />
+        <NavLink
+          href="/deep-work"
+          active={pathname?.startsWith('/deep-work') ?? false}
+          icon={<DeepWorkIcon />}
+          label="Deep Work"
+        />
+        <NavLink
+          href="/crowey-snax"
+          active={pathname === '/crowey-snax'}
+          icon={<span className="text-xl">🍪</span>}
+          label="Snax"
+        />
       </div>
-    </header>
+    </nav>
   );
 }
 
 function NavLink({
   href,
   active,
-  children,
+  icon,
+  label,
 }: {
   href: string;
   active: boolean;
-  children: React.ReactNode;
+  icon: React.ReactNode;
+  label: string;
 }) {
   return (
     <Link
       href={href}
       className={`
-        px-3 py-2 rounded-lg text-sm font-medium
-        transition-colors duration-200
+        flex flex-col items-center justify-center gap-1
+        px-3 py-2 rounded-xl min-w-[70px]
+        transition-all duration-200
         ${active
-          ? 'bg-primary/10 text-primary'
-          : 'text-text-light hover:text-text hover:bg-gray-100'
+          ? 'bg-[#E8F4F8] text-[#5FBDD6]'
+          : 'text-gray-500 hover:text-[#5FBDD6] hover:bg-gray-50'
         }
       `}
     >
-      {children}
+      <span className={active ? 'scale-110 transition-transform' : ''}>{icon}</span>
+      <span className={`text-[10px] font-medium uppercase tracking-wide ${active ? 'text-[#5FBDD6]' : ''}`}>
+        {label}
+      </span>
     </Link>
+  );
+}
+
+function HomeIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+    </svg>
+  );
+}
+
+function QuickWinsIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  );
+}
+
+function DeepWorkIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+    </svg>
   );
 }
 

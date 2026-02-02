@@ -29,8 +29,8 @@ export function PageContainer({
       className={`
         ${maxWidthStyles[maxWidth]}
         mx-auto
-        px-4 py-8
-        min-h-[calc(100vh-4rem)]
+        px-4 py-8 pb-24
+        min-h-screen
         ${centered ? 'flex flex-col items-center justify-center' : ''}
         ${animate ? 'page-transition' : ''}
         ${className}

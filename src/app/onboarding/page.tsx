@@ -42,7 +42,7 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-cream/30 px-4 py-8">
+    <div className="min-h-screen px-4 py-8">
       <div className="max-w-2xl mx-auto">
         {/* Progress */}
         <ProgressIndicator
@@ -54,10 +54,10 @@ export default function OnboardingPage() {
         {/* Pain Point Selection */}
         {step === 'pain-point' && (
           <div className="animate-fade-in">
-            <h1 className="text-2xl sm:text-3xl font-bold text-text mb-3">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-3">
               What brings you here today?
             </h1>
-            <p className="text-text-light mb-8">
+            <p className="text-white/70 mb-8">
               Select the feeling that resonates most right now. This helps us personalize your journey.
             </p>
 
@@ -71,16 +71,11 @@ export default function OnboardingPage() {
                   onClick={() => handlePainPointSelect(painPoint.id)}
                   className="text-left"
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-center gap-3">
                     <span className="text-2xl">{painPoint.icon}</span>
-                    <div>
-                      <h3 className="font-semibold text-text mb-1">
-                        {painPoint.label}
-                      </h3>
-                      <p className="text-sm text-text-light">
-                        {painPoint.description}
-                      </p>
-                    </div>
+                    <h3 className="font-semibold text-white">
+                      {painPoint.label}
+                    </h3>
                   </div>
                 </Card>
               ))}
@@ -91,10 +86,10 @@ export default function OnboardingPage() {
         {/* Readiness Selection */}
         {step === 'readiness' && (
           <div className="animate-fade-in">
-            <h1 className="text-2xl sm:text-3xl font-bold text-text mb-3">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-3">
               What are you ready for?
             </h1>
-            <p className="text-text-light mb-8">
+            <p className="text-white/70 mb-8">
               No pressure—you can always change your approach later.
             </p>
 
@@ -108,25 +103,25 @@ export default function OnboardingPage() {
                 className="text-left"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
                     <span className="text-2xl">⚡</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-text mb-1">
+                    <h3 className="text-lg font-semibold text-white mb-1">
                       Quick Wins
                     </h3>
-                    <p className="text-text-light mb-3">
+                    <p className="text-white/70 mb-3">
                       Start with simple, daily tools you can use right away. Breathing exercises,
                       reframes, and awareness practices.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-gray-100 rounded text-xs text-text-light">
+                      <span className="px-2 py-1 bg-white/20 rounded text-xs text-white/80">
                         1-5 min each
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 rounded text-xs text-text-light">
+                      <span className="px-2 py-1 bg-white/20 rounded text-xs text-white/80">
                         Use anytime
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 rounded text-xs text-text-light">
+                      <span className="px-2 py-1 bg-white/20 rounded text-xs text-white/80">
                         Instant relief
                       </span>
                     </div>
@@ -143,25 +138,25 @@ export default function OnboardingPage() {
                 className="text-left"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-accent/30 flex items-center justify-center shrink-0">
                     <span className="text-2xl">🍪</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-text mb-1">
+                    <h3 className="text-lg font-semibold text-white mb-1">
                       Deep Work
                     </h3>
-                    <p className="text-text-light mb-3">
+                    <p className="text-white/70 mb-3">
                       Ready to create your personal Crowey Snax—lasting artifacts like your
                       A-Game Words, "To Be" List, and more.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-gray-100 rounded text-xs text-text-light">
+                      <span className="px-2 py-1 bg-accent/30 rounded text-xs text-white/80">
                         10-20 min each
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 rounded text-xs text-text-light">
+                      <span className="px-2 py-1 bg-accent/30 rounded text-xs text-white/80">
                         Guided exercises
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 rounded text-xs text-text-light">
+                      <span className="px-2 py-1 bg-accent/30 rounded text-xs text-white/80">
                         Lasting transformation
                       </span>
                     </div>
@@ -170,7 +165,7 @@ export default function OnboardingPage() {
               </Card>
             </div>
 
-            <p className="mt-6 text-sm text-text-light text-center">
+            <p className="mt-6 text-sm text-white/60 text-center">
               Don't worry—Quick Wins users can always explore Deep Work later, and Deep Work
               users get access to Quick Wins too.
             </p>
